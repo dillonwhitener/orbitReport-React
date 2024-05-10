@@ -14,21 +14,13 @@ const Table = ({ sat }) => {
 
       <tbody>
         {sat.map((data, idx) => {
-
-          function operationalStatus(){
-            if (data.operational === true) {
-              return <td>active</td>
-            } else {
-              return <td>inactive</td>
-          }
-        }
-        
+          
           return (
             <tr key={idx}>
               <td>{data.name}</td>
               <td>{data.type}</td>
               <td>{data.launchDate}</td>
-              {operationalStatus()}
+              <td>{data.operational? "active" : "inactive"}</td>
             </tr>
           )
         })}
